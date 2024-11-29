@@ -1,0 +1,30 @@
+[
+    {
+        "deliveryID": 101,
+        "customerID": 1,
+        "droneID": 1,
+        "status": "Delivered",
+        "packageDetails": "Box"
+    },
+    {
+        "deliveryID": "304",
+        "customerID": "4",
+        "droneID": 1,
+        "status": "Delivered",
+        "packageDetails": "Glass"
+    },
+    {
+        "deliveryID": "102",
+        "customerID": "2",
+        "droneID": 2,
+        "status": "Delivered",
+        "packageDetails": "Shoe"
+    },
+    {
+        "deliveryID": "111",
+        "customerID": "5",
+        "droneID": 1,
+        "status": "Delivered",
+        "packageDetails": "Shoes"
+    }
+]
