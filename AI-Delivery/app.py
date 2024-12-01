@@ -57,10 +57,7 @@ def assign_delivery():
 
 @app.route('/update-delivery-status/<int:deliveryID>', methods=['POST'])
 def update_delivery_status(deliveryID):
-    """
-    Updates the status of a delivery.
-    Request JSON: { "status": str }
-    """
+    # Updates the status of a delivery.
     data = request.json
     deliveries = read_data('deliveries.json')
 
@@ -94,17 +91,14 @@ def list_deliveries():
 
 @app.route('/drone/location', methods=['GET'])
 def get_drone_location():
-    """
-    Retrieves the real-time location of all drones.
-    """
+    # Retrieves the real-time location of all drones.
     drones = read_data('drones.json')
     return jsonify(drones)
 
 @app.route('/delivery/status/<int:customerID>', methods=['GET'])
 def get_delivery_status(customerID):
-    """
-    Fetches the delivery status for a specific customer.
-    """
+    
+    # Fetches the delivery status for a specific customer.
     deliveries = read_data('deliveries.json')
     delivery = next((d for d in deliveries if int(d['customerID']) == customerID), None)
     if delivery:
@@ -116,6 +110,9 @@ def get_delivery_status(customerID):
             "location": drone['location'] if drone else "Location unavailable"
         })
     return jsonify({"message": "Delivery not found"}), 404
+
+
+
 
 @app.route('/simulate/drone/<int:droneID>', methods=['POST'])
 def update_drone_location(droneID):
